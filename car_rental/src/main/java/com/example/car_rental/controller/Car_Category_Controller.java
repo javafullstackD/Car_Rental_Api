@@ -4,9 +4,7 @@ import com.example.car_rental.model.Car_category;
 import com.example.car_rental.repository.Car_ModelRepository;
 import com.example.car_rental.repository.Car_categoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +19,10 @@ public class Car_Category_Controller {
     @GetMapping
     public List<Car_category> getAllCarCategories(){
         return car_categoryRepository.findAll();
+    }
+    // Create a new car category
+    @PostMapping
+    public Car_category createCarCategory(@RequestBody Car_category car_category){
+        return  car_categoryRepository.save(car_category);
     }
 }
