@@ -24,7 +24,6 @@ public class Customer {
     private String customerDlNum;
 
     @NotBlank
-
     private String customerName;
 
     @NotBlank
